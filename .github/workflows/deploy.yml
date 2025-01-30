@@ -23,12 +23,6 @@ jobs:
       - name: Build du site
         working-directory: ./web
         run: npm run build
-      - name: Corriger les permissions
-        working-directory: ./web/build
-        run: |
-          chmod -c -R +rX "./" | while read line; do
-            echo "::warning title=Invalid file permissions automatically fixed::$line"
-          done
       - name: Téléverser l'artéfact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -44,7 +38,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Déploiement
         id: deployment
