@@ -18,7 +18,7 @@ Ce gabarit est simplement le projet de départ du produit [Docusaurus](https://d
 8. Profit
 
 ## Installation
-
+force build
 ### Prérequis
 
 Vous devez avoir installé les logiciels suivants sur votre poste :
